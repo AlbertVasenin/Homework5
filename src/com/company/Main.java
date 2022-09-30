@@ -195,43 +195,44 @@ public class Main {
         //согласно процентной ставке, то кредит одобрен, если меньше — отказан.
         //Пример ответа в консоль: «Максимальный платеж при ЗП * равен * рублей. Платеж по кредиту *** рублей.
         //Одобрено/отказано».
-        int age = 34; // возраст
+        int age = 25; // возраст
         double salary = 85_000; // зарплата
         double wantedSum = 330_000; // желаемый кредит
         double MaxPaySalary = salary * 0.5; // максимальный платеж по кредиту от зп
         double month = 12; // срок кредита (месяцы)
-        double PayCreditSum = (wantedSum + (wantedSum * 0.1)) / month; // платеж по кредиту с учетом базовой ставки 10%
-        double PCS11 = (wantedSum + (wantedSum * 0.11)) / month; // платеж по ставке 11%
-        double PCS10_5 = (wantedSum + (wantedSum * 0.105)) / month; // платеж по ставке 10.5%
-        double PCS10_3 = (wantedSum + (wantedSum * 0.103)) / month; // платеж по ставке 10.3%
-        double PCS9_8 = (wantedSum + (wantedSum * 0.098)) / month; // платеж по ставке 9.8%
-        double PCS9_3 = (wantedSum + (wantedSum * 0.093)) / month; // платеж по ставке 9.3%
+        double PayCreditSum = wantedSum * 1.1 / month; // платеж по кредиту с учетом базовой ставки 10%
+        double PCS11 = wantedSum * 1.11 / month; // платеж по ставке 11%
+        double PCS10_5 = wantedSum * 1.105 / month; // платеж по ставке 10.5%
+        double PCS10_3 = wantedSum * 1.103 / month; // платеж по ставке 10.3%
+        double PCS9_8 = wantedSum * 1.098 / month; // платеж по ставке 9.8%
+        double PCS9_3 = wantedSum * 1.093 / month; // платеж по ставке 9.3%
         if (age<23 & salary < 80_000 & MaxPaySalary > PCS11){
-            System.out.println("Максимальный платеж при ЗП " + salary + " равен "+ MaxPaySalary + " рублей.Платеж по кредиту " + PCS11 + " рублей.Одобрено");
+            System.out.printf("Максимальный платеж при ЗП %.2f равен %.2f рублей.Платеж по кредиту %.2f рублей.Одобрено", salary, MaxPaySalary, PCS11);
         } else if(age<23 & salary < 80_000 & MaxPaySalary < PCS11){
-            System.out.println("Максимальный платеж при ЗП " + salary + " равен "+ MaxPaySalary + " рублей.Платеж по кредиту " + PCS11 + " рублей.Отказано");
+            System.out.printf("Максимальный платеж при ЗП %.2f равен %.2f рублей.Платеж по кредиту %.2f рублей.Отказано", salary, MaxPaySalary,PCS11);
         } else if(age>=23 & age<30 & salary < 80_000 & MaxPaySalary > PCS10_5){
-            System.out.println("Максимальный платеж при ЗП " + salary + " равен "+ MaxPaySalary + " рублей.Платеж по кредиту " + PCS10_5 + " рублей.Одобрено");
+            System.out.printf("Максимальный платеж при ЗП %.2f равен %.2f рублей.Платеж по кредиту %.2f рублей.Одобрено", salary, MaxPaySalary,PCS10_5);
         } else if(age>=23 & age<30 & salary < 80_000 & MaxPaySalary < PCS10_5){
-            System.out.println("Максимальный платеж при ЗП " + salary + " равен "+ MaxPaySalary + " рублей.Платеж по кредиту " + PCS10_5 + " рублей.Отказано");
+            System.out.printf("Максимальный платеж при ЗП %.2f равен %.2f рублей.Платеж по кредиту %.2f рублей.Отказано", salary, MaxPaySalary,PCS10_5);
         } else if(age<23 & salary > 80_000 & MaxPaySalary > PCS10_3){
-            System.out.println("Максимальный платеж при ЗП " + salary + " равен "+ MaxPaySalary + " рублей.Платеж по кредиту " + PCS10_3 + " рублей.Одобрено");
+            System.out.printf("Максимальный платеж при ЗП %.2f равен %.2f рублей.Платеж по кредиту %.2f рублей.Одобрено", salary, MaxPaySalary,PCS10_3);
         } else if(age<23 & salary > 80_000 & MaxPaySalary < PCS10_3){
-            System.out.println("Максимальный платеж при ЗП " + salary + " равен "+ MaxPaySalary + " рублей.Платеж по кредиту " + PCS10_3 + " рублей.Отказано");
+            System.out.printf("Максимальный платеж при ЗП %.2f равен %.2f рублей.Платеж по кредиту %.2f рублей.Отказано", salary, MaxPaySalary,PCS10_3);
         } else if(age>=23 & age<30 & salary > 80_000 & MaxPaySalary > PCS9_8){
-            System.out.println("Максимальный платеж при ЗП " + salary + " равен "+ MaxPaySalary + " рублей.Платеж по кредиту " + PCS9_8 + " рублей.Одобрено");
+            System.out.printf("Максимальный платеж при ЗП %.2f равен %.2f рублей.Платеж по кредиту %.2f рублей.Одобрено", salary, MaxPaySalary,PCS9_8);
         } else if(age>=23 & age<30 & salary > 80_000 & MaxPaySalary < PCS9_8){
-            System.out.println("Максимальный платеж при ЗП " + salary + " равен "+ MaxPaySalary + " рублей.Платеж по кредиту " + PCS9_8 + " рублей.Отказано");
+            System.out.printf("Максимальный платеж при ЗП %.2f равен %.2f рублей.Платеж по кредиту %.2f рублей.Отказано", salary, MaxPaySalary,PCS9_8);
         } else if (age>=30 & salary < 80_000 & MaxPaySalary > PayCreditSum) {
-            System.out.println("Максимальный платеж при ЗП " + salary + " равен "+ MaxPaySalary + " рублей.Платеж по кредиту " + PayCreditSum + " рублей.Одобрено");
+            System.out.printf("Максимальный платеж при ЗП %.2f равен %.2f рублей.Платеж по кредиту %.2f рублей.Одобрено", salary, MaxPaySalary,PayCreditSum);
         } else if (age>=30 & salary < 80_000 & MaxPaySalary < PayCreditSum) {
-            System.out.println("Максимальный платеж при ЗП " + salary + " равен "+ MaxPaySalary + " рублей.Платеж по кредиту " + PayCreditSum + " рублей.Отказано");
+            System.out.printf("Максимальный платеж при ЗП %.2f равен %.2f рублей.Платеж по кредиту %.2f рублей.Отказано", salary, MaxPaySalary,PayCreditSum);
         } else if (age>=30 & salary > 80_000 & MaxPaySalary > PCS9_3) {
-            System.out.println("Максимальный платеж при ЗП " + salary + " равен "+ MaxPaySalary + " рублей.Платеж по кредиту " + PCS9_3 + " рублей.Одобрено");
+            System.out.printf("Максимальный платеж при ЗП %.2f равен %.2f рублей.Платеж по кредиту %.2f рублей.Одобрено", salary, MaxPaySalary,PCS9_3);
         } else if (age>=30 & salary > 80_000 & MaxPaySalary < PCS9_3) {
-            System.out.println("Максимальный платеж при ЗП " + salary + " равен "+ MaxPaySalary + " рублей.Платеж по кредиту " + PCS9_3 + " рублей.Отказано");
+            System.out.printf("Максимальный платеж при ЗП %.2f равен %.2f рублей.Платеж по кредиту %.2f рублей.Отказано", salary, MaxPaySalary,PCS9_3);
         }
     }
+
 }
 
 
